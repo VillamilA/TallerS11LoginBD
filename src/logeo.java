@@ -57,12 +57,4 @@ public class logeo extends JFrame{
         return validar;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new logeo().setVisible(true);
-            }
-        });
-    }
 }
