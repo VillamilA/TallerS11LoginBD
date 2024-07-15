@@ -32,7 +32,7 @@ public class bio extends JFrame {
         String url = "jdbc:mysql://localhost:3306/tallers11";
         String username = "root";
         String password = "123456";
-        String sql = "SELECT * FROM hobbies";
+        String sql = "SELECT * FROM biografia";
 
         try{
             Connection conexion = DriverManager.getConnection(url,username,password);
@@ -40,8 +40,11 @@ public class bio extends JFrame {
             ResultSet rst = st.executeQuery(sql);
 
             while(rst.next()){
-                JOptionPane.showMessageDialog(null, "%s | %s | %s |".formatted(rst.getString("idhobbies"), rst.getString("hobbies"), rst.getString
-                        ("descripcion")));
+                JOptionPane.showMessageDialog(null,
+                        "| %s | %s | %s |%s | %s | %s | %s".formatted(rst.getString("idbiografia"), rst.getString("nombre"), rst.getString
+                        ("apellido"), rst.getString("edad"), rst.getString("correo"), rst.getString
+                                ("direccion"), rst.getString
+                                ("carrera")));
             }
             conexion.close();
             st.close();
